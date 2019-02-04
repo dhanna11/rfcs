@@ -1,33 +1,29 @@
-- Feature Name: (fill me in with a unique ident, my_awesome_feature)
-- Start Date: (fill me in with today's date, YYYY-MM-DD)
-- RFC PR: (leave this empty)
-- Chisel-lang Issue: (leave this empty)
+- Feature Name: rules_freechipproject
+- Start Date: 2019-2-3(fill me in with today's date, YYYY-MM-DD)
+- RFC PR: 
+- Chisel-lang Issue: 
 
 # Summary
 [summary]: #summary
 
-One paragraph explanation of the feature.
+I propose evaluating the Bazel build system as well as the monorepository paradigm for Chisel projects.
+This would mostly consist of writing Bazel rule targets for the binaries and the tests. 
+
 
 # Motivation
 [motivation]: #motivation
 
-Why are we doing this? What use cases does it support? What is the expected outcome?
+SBT makes me sad. It does a bad job reinventing the wheel and makes me miss Bazel. 
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
 
-Explain the proposal as if it was already included in the language and you were teaching it to another Chisel-lang programmer. That generally means:
-
-- Introducing new named concepts.
-- Explaining the feature largely in terms of examples.
-- Explaining how Chisel-lang programmers should *think* about the feature, and how it should impact the way they use Chisel-lang. It should explain the impact as concretely as possible.
-- If applicable, provide sample error messages, deprecation warnings, or migration guidance.
-- If applicable, describe the differences between teaching this to existing Chisel-lang programmers and new Chisel-lang programmers.
-
-For implementation-oriented RFCs (e.g. for compiler internals), this section should focus on how compiler contributors should think about the change, and give examples of its concrete impact. For policy RFCs, this section should provide an example-driven introduction to the policy, and explain its impact in concrete terms.
+N/A
 
 # Reference-level explanation
 [reference-level-explanation]: #reference-level-explanation
+
+
 
 This is the technical portion of the RFC. Explain the design in sufficient detail that:
 
@@ -40,7 +36,11 @@ The section should return to the examples given in the previous section, and exp
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this?
+It's another build system that user's will have to install.
+Currently only an older version of Bazel is supported by rules_scala.
+Not in scala. BUILD files are a simplified python dialect.
+SBT plugins 
+Some code modification is required to statisfy the DAG requirement (i.e. no circular dependencies between packages)
 
 # Rationale and alternatives
 [rationale-and-alternatives]: #rationale-and-alternatives
